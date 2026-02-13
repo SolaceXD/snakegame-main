@@ -48,7 +48,7 @@ body {
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 4;
-  background: url("/images/arcade.png") center / contain no-repeat;
+  background: url("images/arcade.png") center / contain no-repeat;
   margin-bottom: 15px;
 }
 
@@ -128,3 +128,65 @@ body {
 #pauseBtn:active {
   background: #e68900;
 }
+
+/* Mobile-friendly D-Pad Styles */
+.dpad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dpad button {
+  font-size: 28px;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  border: 3px solid #333;
+  background: linear-gradient(145deg, #4a4a4a, #2d2d2d);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s, box-shadow 0.1s, background 0.1s;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.dpad button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+}
+
+.dpad .middle {
+  display: flex;
+  gap: 8px;
+}
+
+/* Larger touch targets for very small screens */
+@media (max-width: 360px) {
+  .dpad button {
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
+  }
+  
+  .dpad {
+    gap: 6px;
+  }
+  
+  .dpad .middle {
+    gap: 6px;
+  }
+}
+
+/* Hide D-pad on larger screens (optional - uncomment if needed) */
+/* @media (min-width: 768px) {
+  .dpad {
+    display: none;
+  }
+} */
