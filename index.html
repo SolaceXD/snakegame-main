@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Snake PWA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4CAF50" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-bg">
+      <div class="game-container">
+        <div class="arcade-wrapper">
+          <div class="arcade-screen">
+            <canvas id="game"></canvas>
+
+            <div id="gameOverOverlay" class="overlay hidden">
+              <div class="overlay-content">
+                <h2>💀 Game Over</h2>
+                <p>Puntaje final: <span id="finalScore">0</span></p>
+                <button id="restartBtn">🔄 Reiniciar</button>
+              </div>
+            </div>
+          </div>
+
+          <p>Puntaje: <span id="score">0</span></p>
+
+          <button id="pauseBtn">⏸️ Pausa</button>
+
+          <div class="dpad">
+            <button onclick="changeDirection('up')">⬆️</button>
+            <div class="middle">
+              <button onclick="changeDirection('left')">⬅️</button>
+              <button onclick="changeDirection('down')">⬇️</button>
+              <button onclick="changeDirection('right')">➡️</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("service-worker.js");
+      }
+    </script>
+  </body>
+</html>
