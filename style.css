@@ -48,7 +48,7 @@ body {
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 4;
-  background: url("/images/arcade.png") center / contain no-repeat;
+  background: url("images/arcade.png") center / contain no-repeat;
   margin-bottom: 15px;
 }
 
